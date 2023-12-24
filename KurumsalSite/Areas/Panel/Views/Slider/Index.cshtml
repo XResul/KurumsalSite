@@ -1,0 +1,51 @@
+﻿@model IEnumerable<KurumsalEntityLayer.Entity.Slider>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Panel/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2 class="text-center">Slider Sayfası</h2>
+
+<p>
+    <a href="~/Panel/Slider/Create" class="btn btn-primary"><i class="fa fa-plus"></i> Yeni</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Resim
+        </th>
+        <th>
+            Başlık
+        </th>
+        <th>
+            Açıklama
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <img src="@item.ImageURL" style="max-width:100%;" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SliderTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MetaDescription)
+            </td>
+
+            <td>
+                <a href="~/Panel/Slider/Edit/@item.SliderID" class="btn btn-warning"><i class="fa fa-pencil"></i> </a>
+
+                <a href="~/Panel/Slider/Detail/@item.SliderID" class="btn btn-info"><i class="fa fa-info"></i> </a>
+
+                <a href="~/Panel/Slider/Delete/@item.SliderID" class="btn btn-danger"><i class="fa fa-trash"></i> </a>
+            </td>
+        </tr>
+    }
+
+</table>

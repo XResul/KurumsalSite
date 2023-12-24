@@ -1,0 +1,115 @@
+﻿@model KurumsalEntityLayer.Entity.Product
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Areas/Panel/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center">Ürün Detayları</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Resim
+        </dt>
+
+        <dd>
+            <img src="@Model.ImageURL" style="max-width:70%;"/>
+            <hr />
+        </dd>
+
+
+
+        <dt>
+            Kategori Adı
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductCategory.ProductCategoryName)
+            <hr />
+        </dd>
+
+        <dt>
+            Ürün Adı
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductName)
+            <hr />
+        </dd>
+
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MetaDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MetaDescription)
+            <hr />
+
+
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MetaKey)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MetaKey)
+            <hr />
+
+        </dd>
+
+        <dt>
+            Tarih
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductDate)
+            <hr />
+        </dd>
+
+        <dt>
+            Aktiflik Durumu
+        </dt>
+
+        <dd>
+            @if (Model.IsActive == true)
+            {
+                <div class="aktif"></div>
+                <h2>Aktif</h2>
+            }
+            else
+            {
+                <div class="pasif"></div>
+                <h2>Pasif</h2>
+            }
+
+            <hr />
+        </dd>
+
+        <dt>
+            Açıklama
+        </dt>
+
+        <dd>
+            @Html.Raw(Model.Description)
+            <hr />
+
+        </dd>
+
+
+
+    </dl>
+</div>
+<p>
+    <a href="~/Panel/Products/Edit/@Model.ProductID" class="btn btn-warning"><i class="fa fa-pencil"></i> Düzenle</a>
+
+</p>
+<hr />
+<p>
+    <a href="~/Panel/Products/index" class="btn btn-default"><i class="fa fa-sign-out"></i> Listeye Dön</a>
+
+</p>

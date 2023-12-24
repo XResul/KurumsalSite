@@ -1,0 +1,93 @@
+﻿@model KurumsalEntityLayer.Entity.Contact
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Areas/Panel/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center">Detaylar Sayfası</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            İletişim Başlıgı
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactTitle)
+            <hr />
+        </dd>
+
+        <dt>
+            <i class="fa fa-phone"> Telefon</i>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+            <hr />
+
+        </dd>
+
+        <dt>
+            <i class="fa fa-whatsapp"> Whatsapp</i>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Whatsapp)
+            <hr />
+
+        </dd>
+
+        <dt>
+            <i class="fa fa-envelope"> Email</i>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+            <hr />
+
+        </dd>
+
+        <dt>
+            <i class="fa fa-location-arrow"> Adres</i>
+
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adres)
+            <hr />
+
+        </dd>
+
+         
+
+        <dt>
+            <i class="fa fa-map-marker"> Harita</i>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Map)
+            <hr />
+
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <a href="~/Panel/Contact/Edit/@Model.ContactID" class="btn btn-warning"><i class="fa fa-pencil"></i> Düzenle</a>
+</p>
+<hr />
+<p>
+    <a href="~/Pamel/Contact/index" class="btn btn-default"><i class="fa fa-sign-out"></i> Listeye Dön</a>
+</p>
+
+<style>
+    .circle-container img {
+        width: 30%;
+        height: 20%;
+        border-radius: 100%; /* İşte burada yuvarlak şekli oluşturuyoruz */
+        margin: 10px;
+        object-fit: cover; /* Resim içeriği doldurması için */
+    }
+</style>

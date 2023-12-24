@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <script src="~/Areas/Panel/Content/dashbord/dist/js/jquery.min.js"></script>
+    <script src="~/Areas/Panel/Content/dashbord/dist/js/popper.min.js"></script>
+    <link href="~/Areas/Panel/Content/dashbord/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Areas/Panel/Content/dashbord/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Areas/Panel/Content/dashbord/bower_components/Ionicons/css/ionicons.min.css" rel="stylesheet" />
+    <link href="~/Areas/Panel/Content/dashbord/dist/css/AdminLTE.min.css" rel="stylesheet" />
+    <link href="~/Areas/Panel/Content/dashbord/dist/css/main.css" rel="stylesheet" />
+    <link href="~/Areas/Panel/Content/dashbord/dist/css/skins/_all-skins.min.css" rel="stylesheet" />
+    <link href="~/Areas/Panel/Content/dashbord/dist/css/skins/skin-blue.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic" />
+
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+
+        <header class="main-header">
+
+            <a href="/panel/Home/index" class="logo">
+
+                <span class="logo-mini"><b></b></span>
+
+                <span class="logo-lg"><b></b></span>
+            </a>
+
+            <nav class="navbar navbar-static-top">
+
+                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/">@Request.Url.Host</a></li>
+
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <aside class="main-sidebar">
+
+            <section class="sidebar">
+
+
+
+                <ul class="sidebar-menu" data-widget="tree">
+                    <li class="header">ANA MENÜ</li>
+                    @* Burdan ayarlayacagız arka plan renklerini *@
+
+
+
+
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-file-o"></i> <span>Sayfalar Yönetimi</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+
+                            <li>
+                                <a href="/panel/PageCategory/index"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Sayfalar Kategoriler</a>
+                            </li>
+
+                            <li>
+                                <a href="/panel/Page/index"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>  Sayfalar</a>
+                            </li>
+
+
+
+
+
+
+                        </ul>
+                    </li>
+
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-shopping-bag"></i> <span>Ürün Yönetimi</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="~/Panel/ProductCategory/index"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>  Ürün Kategori</a></li>
+
+                            <li><a href="~/Panel/Products/index"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>  Ürünler</a></li>
+
+                        </ul>
+                    </li>
+
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-paper-plane"></i> <span>Proje Yönetimi</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="~/Panel/ProjectCategory/index"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>  Proje Kategori</a></li>
+
+                            <li><a href="~/Panel/Project/index"><i class="fa fa-long-arrow-right" aria-hidden="true"></i>  Projeler</a></li>
+
+                        </ul>
+                    </li>
+
+                    <li><a href="~/Panel/Logo/index"><i class="fa fa-reddit-alien"></i> <span> Logolar</span></a></li>
+
+
+                    <li><a href="/panel/slider/index"><i class="fa fa-exchange" aria-hidden="true"></i> <span>Slider</span></a></li>
+
+
+
+                    <li><a href="~/Panel/Users/index"><i class="fa fa-user"></i> <span>Kulanıcı Yönetimi</span></a></li>
+
+                    <li><a href="~/panel/contact/index"><i class="fa fa-volume-control-phone" aria-hidden="true"></i> <span>İletişim Bilgileri</span></a></li>
+
+                    <li><a href="~/Panel/Social/Index"><i class="fa fa-share-square-o" aria-hidden="true"></i> <span>Sosyal Medya Yönetimi</span></a></li>
+
+                    @*<li>
+            <a href="#"><i class="fa fa-user-circle-o accordion-item" ></i> <span>Blog Sayfası Yönetimi</span></a>
+        </li>*@
+
+                    <li><a href="~/Panel/UserLogin/Logout"><i class="fa fa-sign-out"></i> <span>Çıkış yap</span></a></li>
+
+
+                </ul>
+
+            </section>
+
+        </aside>
+
+        <div class="content-wrapper" style="">
+
+
+            <div class="row">
+                <section class="col-lg-12 connectedSortable ui-sortable">
+                    <div style="margin:12px;">
+                        <div class="box box-primary">
+                            <div class="box-body">
+
+
+                                @RenderBody()
+
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+
+
+        <div class="control-sidebar-bg"></div>
+    </div>
+
+
+
+
+
+
+    @*************************************SCRIPTS*****************************************************************@
+
+    <script src="~/Areas/Panel/Content/dashbord/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/Areas/Panel/Content/dashbord/bower_components/fastclick/lib/fastclick.js"></script>
+    <script src="~/Areas/Panel/Content/dashbord/dist/js/adminlte.js"></script>
+    <script src="~/Areas/Panel/Content/dashbord/dist/js/pages/dashboard.js"></script>
+    <script src="~/Areas/Panel/Content/dashbord/dist/js/demo.js"></script>
+    <script src="~/Areas/Panel/Content/dashbord/bower_components/bootstrap/js/tab.js"></script>
+    <script src="~/Areas/Panel/Content/dashbord/bower_components/bootstrap/js/collapse.js"></script>
+</body>
+</html>

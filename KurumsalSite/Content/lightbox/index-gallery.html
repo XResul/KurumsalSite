@@ -1,0 +1,638 @@
+﻿<!DOCTYPE html >
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+    <title>LightBox Gallery</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="css/lightgallery.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <style>
+        body::-webkit-scrollbar {
+            width: 10px;
+            background-color: #e0e0e0;
+        }
+
+        body::-webkit-scrollbar-track {
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background-color: #0eaad5;
+            width: 5px !important;
+        }
+    </style>
+
+
+    <style>
+        body {
+            background-color: white;
+        }
+
+        .container169 {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            /* padding-top: 75%; /* 4:3 Aspect Ratio */
+            /*padding-top: 66.66%; /* 3:2 Aspect Ratio */
+            transition: all .5s ease-in-out;
+        }
+
+        .container11 {
+            position: relative;
+            width: 100%;
+            padding-top: 100%; /* 16:9 Aspect Ratio */
+            /* padding-top: 75%; /* 4:3 Aspect Ratio */
+            /*padding-top: 66.66%; /* 3:2 Aspect Ratio */
+            transition: all .5s ease-in-out;
+        }
+
+        .container32 {
+            position: relative;
+            width: 100%;
+            padding-top: 66.66%; /* 3:2 Aspect Ratio */
+            transition: all .5s ease-in-out;
+        }
+
+        .container43 {
+            position: relative;
+            width: 100%;
+            padding-top: 75%; /* 4:3 Aspect Ratio */
+            transition: all .5s ease-in-out;
+            overflow: hidden;
+        }
+
+        .text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            text-align: center;
+            font-size: 20px;
+            color: white;
+            width: 100%;
+            height: 100%;
+            background-image: url(https://i2.wp.com/www.kenlyonsphotography.com.au/wp-content/uploads/2014/10/140409-London-England-195928-1024px.jpg?ssl=1);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            transition: all .5s ease-in-out;
+             cursor:pointer;
+        }
+
+        .col-md-3 {
+            margin: 0px;
+            padding: 0px;
+            position: relative;
+        }
+
+        .cont {
+            padding: 12px;
+            margin: 5px;
+            overflow: hidden;
+            position: relative;
+            padding-bottom: 55px;
+            /*box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);*/
+
+             border:1px #0eaad5 dotted;
+        }
+
+            .cont:hover .container11 .text, .cont:hover .container32 .text, .cont:hover .container43 .text {
+                transform: scale(1.2);
+                cursor: pointer;
+            }
+
+            .cont:hover .container169 .text, .cont:hover .container32 .text, .cont:hover .container43 .text {
+                transform: scale(1.2);
+                cursor: pointer;
+            }
+
+            .cont:before {
+                content: attr(title);
+                position: absolute;
+                left: 0px;
+                bottom: 0px;
+                width: 100%;
+                padding: 8px;
+                background-color: rgba(255, 255, 255, 0.62);
+                color: rgb(0, 0, 0);
+                font-weight: bold;
+                text-align: center;
+                z-index: 999;
+            }
+
+        .lightbox {
+            max-width: 1100px;
+            margin: 0px auto;
+        }
+
+        .lg-outer .lg-thumb-item {
+            cursor: pointer;
+            float: left;
+            overflow: hidden;
+            height: 100%;
+            border: 1px none;
+            border: 1px transparent solid;
+            margin-bottom: 5px;
+            border-radius: 0px;
+            padding: 3px;
+        }
+
+
+            .lg-outer .lg-thumb-item.active, .lg-outer .lg-thumb-item:hover {
+                border-color: white;
+            }
+
+
+            .lg-outer .lg-thumb-item img {
+                transition: all 0.5s ease-in-out;
+                overflow: hidden;
+            }
+
+            .lg-outer .lg-thumb-item.active img, .lg-outer .lg-thumb-item:hover img {
+                border-color: white;
+                transform: scale(1.4);
+            }
+    </style>
+
+</head>
+    <body>
+
+
+        <div class="card-body card-padding">
+            <div class="lightbox">
+
+                <div data-src="https://gayrimenkulprojeleri.net/uploads/5a5f3f6ef0992.jpg" class="col-md-3 col-sm-6">
+
+                    <div class="cont" style="" title="Selim Karakaya">
+                        <div class="container169">
+                            <div class="text" style="background-image:url(https://gayrimenkulprojeleri.net/uploads/5a5f3f6ef0992.jpg)">
+                                <img src="https://gayrimenkulprojeleri.net/uploads/5a5f3f6ef0992.jpg" style=" display:none" />
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div data-src="https://ifsstech.files.wordpress.com/2008/10/169.jpg" class="col-md-3 col-sm-6">
+
+                    <div class="cont" style="" title="Selim Karakaya">
+                        <div class="container169">
+                            <div class="text" style="background-image:url(https://ifsstech.files.wordpress.com/2008/10/169.jpg)">
+                                <img src="https://ifsstech.files.wordpress.com/2008/10/169.jpg" style="display:none;" />
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+                <div data-src="https://i2.wp.com/www.kenlyonsphotography.com.au/wp-content/uploads/2014/10/140409-London-England-195928-1024px.jpg?ssl=1" class="col-md-3 col-sm-6">
+
+                    <div class="cont" style="" title="Selim Karakaya">
+                        <div class="container169">
+                            <div class="text" style="background-image:url(https://i2.wp.com/www.kenlyonsphotography.com.au/wp-content/uploads/2014/10/140409-London-England-195928-1024px.jpg?ssl=1)">
+                                <img src="https://i2.wp.com/www.kenlyonsphotography.com.au/wp-content/uploads/2014/10/140409-London-England-195928-1024px.jpg?ssl=1" style="display:none;" />
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+                <div data-src="https://images3.alphacoders.com/823/thumb-1920-82317.jpg" class="col-md-3 col-sm-6">
+
+                    <div class="cont" style="" title="Selim Karakaya">
+                        <div class="container169">
+                            <div class="text" style="background-image:url(https://images3.alphacoders.com/823/thumb-1920-82317.jpg)">
+                                <img src="https://images3.alphacoders.com/823/thumb-1920-82317.jpg" style="display:none;" />
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+                <div data-src="https://gayrimenkulprojeleri.net/uploads/5a5f3f6ef0992.jpg" class="col-md-3 col-sm-6">
+
+                    <div class="cont" style="" title="Selim Karakaya">
+                        <div class="container169">
+                            <div class="text" style="background-image:url(https://gayrimenkulprojeleri.net/uploads/5a5f3f6ef0992.jpg)">
+                                <img src="https://gayrimenkulprojeleri.net/uploads/5a5f3f6ef0992.jpg" style=" display:none" />
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div data-src="https://ifsstech.files.wordpress.com/2008/10/169.jpg" class="col-md-3 col-sm-6">
+
+                    <div class="cont" style="" title="Selim Karakaya">
+                        <div class="container169">
+                            <div class="text" style="background-image:url(https://ifsstech.files.wordpress.com/2008/10/169.jpg)">
+                                <img src="https://ifsstech.files.wordpress.com/2008/10/169.jpg" style="display:none;" />
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+                <div data-src="https://i2.wp.com/www.kenlyonsphotography.com.au/wp-content/uploads/2014/10/140409-London-England-195928-1024px.jpg?ssl=1" class="col-md-3 col-sm-6">
+
+                    <div class="cont" style="" title="Selim Karakaya">
+                        <div class="container169">
+                            <div class="text" style="background-image:url(https://i2.wp.com/www.kenlyonsphotography.com.au/wp-content/uploads/2014/10/140409-London-England-195928-1024px.jpg?ssl=1)">
+                                <img src="https://i2.wp.com/www.kenlyonsphotography.com.au/wp-content/uploads/2014/10/140409-London-England-195928-1024px.jpg?ssl=1" style="display:none;" />
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+                <div data-src="https://images3.alphacoders.com/823/thumb-1920-82317.jpg" class="col-md-3 col-sm-6">
+
+                    <div class="cont" style="" title="Selim Karakaya">
+                        <div class="container169">
+                            <div class="text" style="background-image:url(https://images3.alphacoders.com/823/thumb-1920-82317.jpg)">
+                                <img src="https://images3.alphacoders.com/823/thumb-1920-82317.jpg" style="display:none;" />
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+                <div data-src="https://gayrimenkulprojeleri.net/uploads/5a5f3f6ef0992.jpg" class="col-md-3 col-sm-6">
+
+                    <div class="cont" style="" title="Selim Karakaya">
+                        <div class="container169">
+                            <div class="text" style="background-image:url(https://gayrimenkulprojeleri.net/uploads/5a5f3f6ef0992.jpg)">
+                                <img src="https://gayrimenkulprojeleri.net/uploads/5a5f3f6ef0992.jpg" style=" display:none" />
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div data-src="https://ifsstech.files.wordpress.com/2008/10/169.jpg" class="col-md-3 col-sm-6">
+
+                    <div class="cont" style="" title="Selim Karakaya">
+                        <div class="container169">
+                            <div class="text" style="background-image:url(https://ifsstech.files.wordpress.com/2008/10/169.jpg)">
+                                <img src="https://ifsstech.files.wordpress.com/2008/10/169.jpg" style="display:none;" />
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+                <div data-src="https://i2.wp.com/www.kenlyonsphotography.com.au/wp-content/uploads/2014/10/140409-London-England-195928-1024px.jpg?ssl=1" class="col-md-3 col-sm-6">
+
+                    <div class="cont" style="" title="Selim Karakaya">
+                        <div class="container169">
+                            <div class="text" style="background-image:url(https://i2.wp.com/www.kenlyonsphotography.com.au/wp-content/uploads/2014/10/140409-London-England-195928-1024px.jpg?ssl=1)">
+                                <img src="https://i2.wp.com/www.kenlyonsphotography.com.au/wp-content/uploads/2014/10/140409-London-England-195928-1024px.jpg?ssl=1" style="display:none;" />
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+                <div data-src="https://images3.alphacoders.com/823/thumb-1920-82317.jpg" class="col-md-3 col-sm-6">
+
+                    <div class="cont" style="" title="Selim Karakaya">
+                        <div class="container169">
+                            <div class="text" style="background-image:url(https://images3.alphacoders.com/823/thumb-1920-82317.jpg)">
+                                <img src="https://images3.alphacoders.com/823/thumb-1920-82317.jpg" style="display:none;" />
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+
+
+
+
+
+            <div class="clearfix"></div>
+
+            <div class="lightbox photos">
+
+                <div data-src="gallery/1.jpg" class="col-md-3 col-sm-4  ">
+
+                    <div class="cont" style="" title="Resimlerim">
+                        <div class="container11">
+                            <div class="text" style="background-image:url(gallery/thumbs/1.jpg)">
+                                <img src="gallery/thumbs/1.jpg" style=" display:none" />
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div data-src="gallery/2.jpg" class="col-md-3 col-sm-4  ">
+                    <div class="cont" style="" title="Resimlerim">
+                        <div class="  container11">
+                            <div class="text" style="background-image:url(gallery/thumbs/2.jpg)">
+                                <img src="gallery/thumbs/2.jpg" style=" display:none" />
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div data-src="gallery/3.jpg" class="col-md-3 col-sm-4  ">
+                    <div class="cont" style="" title="Resimlerim">
+                        <div class="  container11">
+                            <div class="text" style="background-image:url(gallery/thumbs/3.jpg)">
+                                <img src="gallery/thumbs/3.jpg" style=" display:none" />
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div data-src="gallery/4.jpg" class="col-md-3 col-sm-4  ">
+                    <div class="cont" style="" title="Resimlerim">
+                        <div class="  container11">
+                            <div class="text" style="background-image:url(gallery/thumbs/4.jpg)">
+                                <img src="gallery/thumbs/4.jpg" style=" display:none" />
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div data-src="gallery/5.jpg" class="col-md-3 col-sm-4  ">
+                    <div class="cont" style="" title="Resimlerim">
+                        <div class="  container11">
+                            <div class="text" style="background-image:url(gallery/thumbs/5.jpg)">
+                                <img src="gallery/thumbs/5.jpg" style=" display:none" />
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div data-src="gallery/6.jpg" class="col-md-3 col-sm-4  ">
+                    <div class="cont" style="" title="Resimlerim">
+                        <div class="  container11">
+                            <div class="text" style="background-image:url(gallery/thumbs/6.jpg)">
+                                <img src="gallery/thumbs/6.jpg" style=" display:none" />
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div data-src="gallery/7.jpg" class="col-md-3 col-sm-4  ">
+                    <div class="cont" style="" title="Resimlerim">
+                        <div class="  container11">
+                            <div class="text" style="background-image:url(gallery/thumbs/7.jpg)">
+                                <img src="gallery/thumbs/7.jpg" style=" display:none" />
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div data-src="gallery/8.jpg" class="col-md-3 col-sm-4  ">
+                    <div class="cont" style="" title="Resimlerim">
+                        <div class="  container11">
+                            <div class="text" style="background-image:url(gallery/thumbs/8.jpg)">
+                                <img src="gallery/thumbs/8.jpg" style=" display:none" />
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div data-src="gallery/9.jpg" class="col-md-3 col-sm-4  ">
+                    <div class="cont" style="" title="Resimlerim">
+                        <div class="  container11">
+                            <div class="text" style="background-image:url(gallery/thumbs/9.jpg)">
+                                <img src="gallery/thumbs/9.jpg" style=" display:none" />
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div data-src="gallery/10.jpg" class="col-md-3 col-sm-4  ">
+                    <div class="cont" style="" title="Resimlerim">
+                        <div class="  container11">
+                            <div class="text" style="background-image:url(gallery/thumbs/10.jpg)">
+                                <img src="gallery/thumbs/10.jpg" style=" display:none" />
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div data-src="gallery/11.jpg" class="col-md-3 col-sm-4  ">
+                    <div class="cont" style="" title="Resimlerim">
+                        <div class="  container11">
+                            <div class="text" style="background-image:url(gallery/thumbs/11.jpg)">
+                                <img src="gallery/thumbs/11.jpg" style=" display:none" />
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div data-src="gallery/12.jpg" class="col-md-3 col-sm-4  ">
+                    <div class="cont" style="" title="Resimlerim">
+                        <div class="  container11">
+                            <div class="text" style="background-image:url(gallery/thumbs/12.jpg)">
+                                <img src="gallery/thumbs/12.jpg" style=" display:none" />
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div data-src="gallery/13.jpg" class="col-md-3 col-sm-4  ">
+                    <div class="cont" style="" title="Resimlerim">
+                        <div class="  container11">
+                            <div class="text" style="background-image:url(gallery/thumbs/13.jpg)">
+                                <img src="gallery/thumbs/13.jpg" style=" display:none" />
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div data-src="gallery/14.jpg" class="col-md-3 col-sm-4  ">
+                    <div class="cont" style="" title="Resimlerim">
+                        <div class="  container11">
+                            <div class="text" style="background-image:url(gallery/thumbs/14.jpg)">
+                                <img src="gallery/thumbs/14.jpg" style=" display:none" />
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div data-src="gallery/15.jpg" class="col-md-3 col-sm-4  ">
+                    <div class="cont" style="" title="Resimlerim">
+                        <div class="  container11">
+                            <div class="text" style="background-image:url(gallery/thumbs/15.jpg)">
+                                <img src="gallery/thumbs/15.jpg" style=" display:none" />
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div data-src="gallery/16.jpg" class="col-md-3 col-sm-4  ">
+                    <div class="cont" style="" title="Resimlerim">
+                        <div class="  container11">
+                            <div class="text" style="background-image:url(gallery/thumbs/16.jpg)">
+                                <img src="gallery/thumbs/16.jpg" style=" display:none" />
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div data-src="gallery/17.jpg" class="col-md-3 col-sm-4  ">
+                    <div class="cont" style="" title="Resimlerim">
+                        <div class="  container11">
+                            <div class="text" style="background-image:url(gallery/thumbs/17.jpg)">
+                                <img src="gallery/thumbs/17.jpg" style=" display:none" />
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div data-src="gallery/18.jpg" class="col-md-3 col-sm-4  ">
+                    <div class="cont" style="" title="Resimlerim">
+                        <div class="  container11">
+                            <div class="text" style="background-image:url(gallery/thumbs/18.jpg)">
+                                <img src="gallery/thumbs/18.jpg" style=" display:none" />
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div data-src="gallery/19.jpg" class="col-md-3 col-sm-4  ">
+                    <div class="cont" style="" title="Resimlerim">
+                        <div class="  container11">
+                            <div class="text" style="background-image:url(gallery/thumbs/19.jpg)">
+                                <img src="gallery/thumbs/19.jpg" style=" display:none" />
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div data-src="gallery/20.jpg" class="col-md-3 col-sm-4  ">
+                    <div class="cont" style="" title="Resimlerim">
+                        <div class="  container11">
+                            <div class="text" style="background-image:url(gallery/thumbs/20.jpg)">
+                                <img src="gallery/thumbs/20.jpg" style=" display:none" />
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div data-src="gallery/21.jpg" class="col-md-3 col-sm-4  ">
+                    <div class="cont" style="" title="Resimlerim">
+                        <div class="  container11">
+                            <div class="text" style="background-image:url(gallery/thumbs/21.jpg)">
+                                <img src="gallery/thumbs/21.jpg" style=" display:none" />
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div data-src="gallery/22.jpg" class="col-md-3 col-sm-4  ">
+                    <div class="cont" style="" title="Resimlerim">
+                        <div class="  container11">
+                            <div class="text" style="background-image:url(gallery/thumbs/22.jpg)">
+                                <img src="gallery/thumbs/22.jpg" style=" display:none" />
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div data-src="gallery/23.jpg" class="col-md-3 col-sm-4  ">
+                    <div class="cont" style="" title="Resimlerim">
+                        <div class="  container11">
+                            <div class="text" style="background-image:url(gallery/thumbs/23.jpg)">
+                                <img src="gallery/thumbs/23.jpg" style=" display:none" />
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div data-src="gallery/24.jpg" class="col-md-3 col-sm-4  ">
+                    <div class="cont" style="" title="Resimlerim">
+                        <div class="  container11">
+                            <div class="text" style="background-image:url(gallery/thumbs/24.jpg)">
+                                <img src="gallery/thumbs/24.jpg" style=" display:none" />
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="clearfix"></div>
+
+
+        </div>
+
+
+         <script src="js/jquery.min.js"></script>
+       <!-- <script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>-->
+   
+      <!--  <script src="vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+        
+        <script src="vendors/bootstrap-growl/bootstrap-growl.min.js"></script>
+        <script src="vendors/bower_components/sweetalert/dist/sweetalert.min.js"></script>-->
+       <script src="js/lightgallery-all.min.js"></script>
+      <!-- <script src="vendors/bower_components/Waves/dist/waves.min.js"></script>-->
+        <!-- Placeholder for IE9 -->
+        <!--[if IE 9 ]>
+            <script src="vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+        <![endif]-->
+
+        <script src="js/app.min.js"></script>
+
+    </body>
+
+    </html>

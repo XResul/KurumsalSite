@@ -1,0 +1,47 @@
+﻿@model IEnumerable<KurumsalEntityLayer.Entity.ProjectImage>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Panel/Views/Shared/_Layout.cshtml";
+}
+
+
+<h1 class="text-center">Resim Ekleme Sayfası</h1>
+
+@using (Html.BeginForm("AddImage", "ProjectImage", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <input type="hidden" name="ProjectID" id="ProjectID" value="@ViewContext.RouteData.Values["id"]" />
+    <input type="file" name="image" />
+    <br />
+    <br />
+    <button type="submit" class="btn btn-success">Yükle</button>
+}
+
+<br />
+<a href="~/Panel/Project/index" class="btn btn-default"><i class="fa fa-sign-out"></i> Listeye Dön</a>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4">
+            <img src="@item.ProjectImageUrl" style="max-width:70%;" class="a"/>
+
+            <p>
+                <a href="~/Panel/ProjectImage/Delete/@item.ProjectImageID" class="btn btn-danger"><i class="fa fa-trash"></i> Kaldır</a>
+            </p>
+
+        </div>
+    }
+</div> 
+<style>
+    .a{
+        display:flex;
+
+    }
+</style>

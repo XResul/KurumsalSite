@@ -1,0 +1,117 @@
+﻿@model KurumsalSite.Models.Project_T_HomeView
+@{
+    ViewBag.Title = "GuncelP";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+  
+
+    main {
+        max-width: 800px;
+        margin: 20px auto;
+    }
+
+    .proje-karti {
+        float: left;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+    }
+
+        .proje-karti img {
+            width: 100%;
+            height: auto;
+        }
+
+    .proje-detay {
+        padding: 20px;
+    }
+
+        .proje-detay h2 {
+            color: #333;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .proje-detay p {
+            color: #666;
+            font-size: 1em;
+            line-height: 1.4;
+        }
+
+    .detay-linki {
+        display: block;
+        margin-top: 15px;
+        background-color: rgba(0, 0, 0, 0.1);
+        color: black;
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+        .detay-linki:hover {
+            background-color: #34fafa;
+            color: black;
+        }
+
+    .detay-linki-resim {
+        display: block;
+        margin-top: 15px;
+        background-color: rgba(0, 0, 0, 0.1);
+        color: #007BFF;
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+        .detay-linki-resim:hover {
+            background-color: #8eff78;
+        }
+
+
+
+    .footer {
+        text-align: center;
+        padding: 10px;
+        background-color: #333;
+        color: #fff;
+    }
+</style>
+
+
+<body>
+    <header class="benner">
+        <h1>@Model.ProjectCategorys.ProjectCategoryName</h1>
+    </header>
+
+    <main>
+        @foreach (var item in Model.projects)
+        {
+            <div class="proje-karti">
+                <img src="@item.ImageURL" alt="Proje Resmi">
+                <div class="proje-detay">
+                    <h2>@item.ProjectName</h2>
+                    <p>@item.MetaDecription</p>
+
+                    <a href="~/ProjectT/Project_Detail/@item.ProjectID" class="detay-linki">Detayları Gör</a>
+
+                    <a href="~/ProjectT/ProjectImageDetail/@item.ProjectID" class="detay-linki-resim"><i class="fa fa-sign-out"></i> <i class="fa fa-image"></i> Galeri</a>
+                </div>
+            </div>
+        }
+
+    </main>
+
+</body>

@@ -1,0 +1,40 @@
+﻿@model KurumsalEntityLayer.Entity.Logos
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Areas/Panel/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center">Detaylar</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Logo Adı
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LogoName)
+            <hr />
+        </dd>
+
+        <dt>
+            Resim
+        </dt>
+
+        <dd>
+            <img src="@Model.ImageURL" style="max-width:100%;max-height:100%;" />
+        </dd>
+    </dl>
+</div>
+<hr />
+
+<p>
+    <a href="~/Panel/Logo/Edit/@Model.LogoID" class="btn btn-warning"><i class="fa fa-pencil"></i> Düzenle</a>
+
+</p>
+<hr />
+<p>
+    <a href="~/Panel/Logo/index" class="btn btn-default"><i class="fa fa-sign-out"></i> Listeye Dön</a>
+</p>

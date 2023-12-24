@@ -1,0 +1,88 @@
+﻿@model KurumsalEntityLayer.Entity.Pages
+@{
+    ViewBag.Title = "PageDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+
+
+<body>
+
+<style>
+    body {
+     
+    }
+    .benner{
+        padding:50px;
+    }
+   
+
+    main {
+        
+        margin: 20px auto;
+    }
+
+    .detaylar-karti {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+        .detaylar-karti img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+        }
+
+    .detaylar-icerik {
+        padding: 20px;
+    }
+
+        .detaylar-icerik h2 {
+            text-align:center;
+            color: #333;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .detaylar-icerik p {
+            color: #666;
+            font-size: 1em;
+        }
+
+        .detaylar-icerik ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .detaylar-icerik li {
+            margin-bottom: 5px;
+            color: #888;
+        }
+
+
+</style>
+    <header class="benner">
+        <h1>@Model.PageTitle</h1>
+    </header>
+
+    <main class="container">
+        <div class="detaylar-karti">
+            <img src="@Model.ImageURL" alt="Ürün Resmi">
+            <div class="detaylar-icerik">
+                @*<h2>@Model.PageTitle</h2>*@
+                <p>@Html.Raw(@Model.Description)</p>
+                @*<ul>
+                    <li>Detay 1</li>
+                    <li>Detay 2</li>
+                    <li>Detay 3</li>
+                </ul>*@
+            </div>
+        </div>
+    </main>
+</body>
+

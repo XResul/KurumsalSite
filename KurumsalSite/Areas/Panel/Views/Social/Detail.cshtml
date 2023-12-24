@@ -1,0 +1,93 @@
+﻿@model KurumsalEntityLayer.Entity.Social
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Areas/Panel/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center">Detaylar</h2>
+
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <img src="~/Areas/Panel/Content/dashbord/dist/Icons/icons8-youtube-64.png" />
+        </dt>
+
+        <dd>
+            <br />
+            @Html.DisplayFor(model => model.Youtube)
+            <br />
+            <br />
+            <br />
+
+            <hr />
+        </dd>
+
+        <dt>
+            <img src="~/Areas/Panel/Content/dashbord/dist/Icons/icons8-instagram-64.png" />
+        </dt>
+
+        <dd>
+            <br />
+            @Html.DisplayFor(model => model.Instagram)
+            <br />
+            <br />
+            <br />
+
+            <hr />
+        </dd>
+
+        <dt>
+            <img src="~/Areas/Panel/Content/dashbord/dist/Icons/icons8-linkedin-64.png" />
+        </dt>
+
+        <dd>
+            <br />
+            @Html.DisplayFor(model => model.Linkedin)
+            <br />
+            <br />
+            <br />
+
+            <hr />
+        </dd>
+
+        <dt>
+            <img src="~/Areas/Panel/Content/dashbord/dist/Icons/icons8-facebook-64.png" />
+        </dt>
+
+        <dd>
+            <br />
+            @Html.DisplayFor(model => model.Facebook)
+            <br />
+            <br />
+            <br />
+
+            <hr />
+        </dd>
+
+        <dt>
+            <img src="~/Areas/Panel/Content/dashbord/dist/Icons/icons8-twitter-64.png" />
+        </dt>
+
+        <dd>
+            <br />
+            @Html.DisplayFor(model => model.Twitter)
+            <br />
+            <br />
+            <br />
+
+            <hr />
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <a href="~/Panel/Social/Edit/@Model.SocialID" class="btn btn-warning"><i class="fa fa-pencil"></i> Düzenle</a>
+
+</p>
+<hr />
+<p>
+    <a href="~/Panel/Social/index" class="btn btn-default"><i class="fa fa-sign-out"></i> Listeye Dön</a>
+</p>

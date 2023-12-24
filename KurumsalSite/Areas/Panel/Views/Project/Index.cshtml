@@ -1,0 +1,87 @@
+﻿@model IEnumerable<KurumsalEntityLayer.Entity.Project>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Panel/Views/Shared/_Layout.cshtml";
+}
+
+
+<script src="https://kit.fontawesome.com/cad7156e83.js"></script>
+
+
+<h2>Projeler Sayfası</h2>
+
+<p>
+    <a href="~/Panel/Project/Create" class="btn btn-primary"><i class="fa fa-plus"></i> Yeni</a>
+</p>
+<br />
+<table class="table">
+    <tr>
+        <th>
+            Resim
+        </th>
+        <th>
+            Kategori Adı
+        </th>
+        <th>
+            Proje Adı
+        </th>
+
+
+        <th>
+            @Html.DisplayNameFor(model => model.MetaDecription)
+        </th>
+
+
+        <th>
+            Durum
+        </th>
+        <th>İşlem</th>
+
+        <th>Proje Resimleri</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <img src="@item.ImageURL" style="max-width:70%;" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProjectCategory.ProjectCategoryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProjectName)
+            </td>
+
+
+            <td>
+                @Html.DisplayFor(modelItem => item.MetaDecription)
+            </td>
+
+            <td>
+                @if (item.IsActive == true)
+                {
+                    <div class="aktif"></div>
+                }
+                else
+                {
+                    <div class="pasif"></div>
+                }
+            </td>
+            <td>
+                <a href="~/Panel/Project/Edit/@item.ProjectID" class="btn btn-warning"><i class="fa fa-pencil"></i> Düzenle</a>
+
+                <a href="~/Panel/Project/Detail/@item.ProjectID" class="btn btn-info"><i class="fa fa-info"></i> Detaylar</a>
+
+                <a href="~/Panel/Project/Delete/@item.ProjectID" class="btn btn-danger"><i class="fa fa-trash"></i> Kaldır</a>
+
+            </td>
+            <td>
+                <a href="~/Panel/ProjectImage/index/@item.ProjectID" class="btn btn-info"><i class="fa fa-picture-o"></i> Resimler</a>
+
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,195 @@
+﻿@model KurumsalSite.Models.ContactViewModel
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/ContactFile/bootstrap.min.css" rel="stylesheet" />
+<script src="~/Content/ContactFile/bootstrap.min.js"></script>
+<script src="~/Content/ContactFile/jquery-2.2.0.min.js"></script>
+<script src="~/Content/ContactFile/js.js"></script>
+<script src="~/Content/ContactFile/slick.js"></script>
+
+<script src="script.js" defer></script>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f9fa;
+    }
+
+
+
+    main {
+        max-width: 800px;
+        margin: 20px auto;
+    }
+
+    .iletisim-bilgileri {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .iletisim-detay {
+        flex: 1;
+        background-color: #fff;
+        border: 1px solid #ced4da;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin-right: 20px;
+    }
+
+        .iletisim-detay h2 {
+            color: #343a40;
+        }
+
+    #harita {
+        flex: 2;
+        height: 450px;
+        border: 1px solid #ced4da;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    footer {
+        text-align: center;
+        padding: 10px;
+        background-color: #343a40;
+        color: #fff;
+    }
+</style>
+
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f9fa;
+    }
+
+
+    main {
+        max-width: 800px;
+        margin: 20px auto;
+    }
+
+    .iletisim-kutu {
+        background-color: #fff;
+        border: 1px solid #ced4da;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .iletisim-formu {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    label {
+        margin-bottom: 8px;
+        font-weight: bold;
+    }
+
+    input,
+    textarea {
+        margin-bottom: 15px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+    button {
+        padding: 10px;
+        background-color: #007BFF;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+    footer {
+        text-align: center;
+        padding: 10px;
+        background-color: #343a40;
+        color: #fff;
+    }
+</style>
+<body>
+    <header class="benner">
+        <h1>@Model.contact.ContactTitle</h1>
+    </header>
+
+    <main>
+        <div class="iletisim-bilgileri">
+            <div class="iletisim-detay">
+                <h2>İletişim Bilgileri</h2>
+                <p>Telefon: @Model.contact.Phone</p>
+                <p>E-posta: @Model.contact.Email</p>
+                <p>Adres: @Model.contact.Adres</p>
+            </div>
+
+            <iframe src="@Model.contact.Map" id="harita"></iframe>
+        </div>
+    </main>
+
+</body>
+
+
+
+<link rel="stylesheet" href="styles.css">
+
+
+<main>
+
+
+    <div class="iletisim-kutu">
+        <div class="alert">@TempData["formMesaj"]</div>
+        <form action="/home/iletisimForm" method="post" class="iletisim-formu">
+            <label for="ad">Adınız:</label>
+            <input type="text" id="ad" name="ad" required>
+
+            <label for="email">E-posta Adresiniz:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="mesaj">Mesajınız:</label>
+            <textarea id="mesaj" name="mesaj" rows="4" required></textarea>
+            <br />
+            <br />
+            <button type="submit">Gönder</button>
+        </form>
+    </div>
+</main>
+
+
+
+<footer>
+</footer>
+
+
+
+<br />
+<br />
+<br />
+<br />
+
+@Html.Partial("_Logo", Model.LogosList)
+
+<br />
+<br />
+<br />
+<br />
+
+
+<footer>
+</footer>

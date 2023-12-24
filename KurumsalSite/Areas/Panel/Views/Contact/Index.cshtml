@@ -1,0 +1,76 @@
+﻿@model IEnumerable<KurumsalEntityLayer.Entity.Contact>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Panel/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center">İletişim Sayfası</h2>
+
+<p>
+    <a href="~/Panel/Contact/Create" class="btn btn-primary"><i class="fa fa-plus"></i> Yeni</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            İletişim Başlık
+        </th>
+        <th>
+            <i class="fa fa-phone"> Telefon</i>
+        </th>
+        <th>
+            <i class="fa fa-whatsapp"> Whatsapp</i>
+        </th>
+        <th>
+            <i class="fa fa-envelope"> Email</i>
+
+        </th>
+        <th>
+            <i class="fa fa-location-arrow"> Adres</i>
+
+        </th>
+         
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Whatsapp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adres)
+            </td>
+             
+             
+            <td>
+                <a href="~/Panel/Contact/Edit/@item.ContactID" class="btn btn-warning"><i class="fa fa-pencil"></i> </a>
+
+                <a href="~/Panel/Contact/Detail/@item.ContactID" class="btn btn-info"><i class="fa fa-info"></i> </a>
+
+                <a href="~/Panel/Contact/Delete/@item.ContactID" class="btn btn-danger"><i class="fa fa-trash"></i> </a>
+            </td>
+        </tr>
+    }
+
+</table>
+
+<style>
+    .circle-container img {
+        width: 500%;
+        height: 100px;
+        border-radius: 100%; /* İşte burada yuvarlak şekli oluşturuyoruz */
+        margin: 10px;
+        object-fit: cover; /* Resim içeriği doldurması için */
+    }
+</style>

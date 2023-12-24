@@ -1,0 +1,55 @@
+﻿@model KurumsalEntityLayer.Entity.Users
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+    <link href="~/Areas/Panel/Content/dashbord/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="~/Areas/Panel/Content/dashbord/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+
+    <link href="~/Areas/Panel/Content/dashbord/dist/css/login.css" rel="stylesheet" />
+    <title>Giriş Ekranı</title>
+</head>
+<body>
+    <div>
+        <div class="login-panel">
+            <div class="login-content">
+                <div class="login-body">
+
+                    <br />
+
+                    <h1><i class="fa fa-lock"> Kullanıcı Girişi</i></h1>
+                    <form action="~/Panel/UserLogin/Login" method="post">
+
+
+                        <div class="form-group">
+                            <input type="text" name="Email" class="form-control" placeholder="Email" value="@Model.Email" />
+
+                        </div>
+
+                        <div class="form-group">
+                            <input type="password" name="UserPassword" class="form-control" placeholder="şifre" value="@Model.UserPassword" />
+                        </div>
+
+
+                        <button type="submit" class="btn btn-default" style="background-color: #b3dcdc"><i class="fa fa-sign-in"></i> Giriş yap</button>
+
+
+                    </form>
+                    <span class="text-danger">
+                        @ViewBag.hata
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

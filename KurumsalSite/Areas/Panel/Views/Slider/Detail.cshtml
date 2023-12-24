@@ -1,0 +1,50 @@
+﻿@model KurumsalEntityLayer.Entity.Slider
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Areas/Panel/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2 class="text-center">Detaylar Sayfası</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Başlık
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SliderTitle)
+            <hr />
+        </dd>
+
+        <dt>
+            Açıklama
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MetaDescription)
+            <hr />
+        </dd>
+
+        <dt>
+            Resim
+        </dt>
+
+        <dd>
+            <img src="@Model.ImageURL" style="max-width:100%;" />
+            <hr />
+        </dd>
+
+    </dl>
+</div>
+
+<p>
+    <a href="~/Panel/Slider/Edit/@Model.SliderID" class="btn btn-warning"><i class="fa fa-pencil"></i> Düzenle</a>
+</p>
+<hr />
+<p>
+    <a href="~/Panel/Slider/index" class="btn btn-default"><i class="fa fa-sign-out"></i> Listeye Dön</a>
+</p>

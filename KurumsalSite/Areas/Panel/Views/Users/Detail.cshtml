@@ -1,0 +1,62 @@
+﻿@model KurumsalEntityLayer.Entity.Users
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Areas/Panel/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2 class="text-center">Detaylar Sayfası</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Kullanıcı Adı
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+            <hr />
+        </dd>
+
+        <dt>
+            Email
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+            <hr />
+
+        </dd>
+
+        <dt>
+            Şifre
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserPassword)
+            <hr />
+
+        </dd>
+
+        <dt>
+            Rol
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Roles)
+            <hr />
+
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <a href="~/Panel/Users/Edit/@Model.UserID" class="btn btn-warning"><i class="fa fa-pencil"></i> Düzenle</a>
+</p>
+<hr />
+
+<p>
+    <a href="~/Panel/Users/index" class="btn btn-default"><i class="fa fa-sign-out"></i> Listeye Dön</a>
+</p>

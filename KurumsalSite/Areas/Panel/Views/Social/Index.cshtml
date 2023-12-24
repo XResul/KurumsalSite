@@ -1,0 +1,62 @@
+﻿@model IEnumerable<KurumsalEntityLayer.Entity.Social>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Panel/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center">Sosyal Medya Yönetimi</h2>
+
+<p>
+    <a href="~/Panel/Social/Create" class="btn btn-primary"><i class="fa fa-plus"></i> Yeni</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <img src="~/Areas/Panel/Content/dashbord/dist/Icons/icons8-youtube-64.png" />
+
+        </th>
+        <th>
+            <img src="~/Areas/Panel/Content/dashbord/dist/Icons/icons8-instagram-64.png" />
+        </th>
+        <th>
+            <img src="~/Areas/Panel/Content/dashbord/dist/Icons/icons8-linkedin-64.png" />
+        </th>
+        <th>
+            <img src="~/Areas/Panel/Content/dashbord/dist/Icons/icons8-facebook-64.png" />
+        </th>
+        <th>
+            <img src="~/Areas/Panel/Content/dashbord/dist/Icons/icons8-twitter-64.png" />
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Youtube)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Instagram)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Linkedin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Facebook)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Twitter)
+            </td>
+            <td>
+                <a href="~/Panel/Social/Edit/@item.SocialID" class="btn btn-warning"><i class="fa fa-pencil"></i> </a>
+
+                <a href="~/Panel/Social/Detail/@item.SocialID" class="btn btn-info"><i class="fa fa-info"></i> </a>
+
+                <a href="~/Panel/Social/Delete/@item.SocialID" class="btn btn-danger"><i class="fa fa-trash"></i> </a>
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,103 @@
+﻿@model KurumsalEntityLayer.Entity.Project
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Areas/Panel/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detaylar</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Kategori
+        </dt>
+
+        <dd>
+            @ViewBag.projects
+          
+            <hr />
+        </dd>
+
+        <dt>
+            Proje Adı
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProjectName)
+            <hr />
+        </dd>
+
+        <dt>
+            Resim
+        </dt>
+
+        <dd>
+            <img src="@Model.ImageURL" style="max-width:70%;" />
+            <hr />
+
+        </dd>
+
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MetaDecription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MetaDecription)
+            <hr />
+
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MetaKey)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MetaKey)
+            <hr />
+
+        </dd>
+
+
+        <dt>
+            Aktiflik Durumu
+        </dt>
+
+        <dd>
+            @if (Model.IsActive == true)
+            {
+                <div class="aktif"></div>
+                <h2>Aktif</h2>
+            }
+            else
+            {
+                <div class="pasif"></div>
+                <h2>Pasif</h2>
+            }
+
+            <hr />
+        </dd>
+
+
+        <dt>
+            Proje Açıklama
+        </dt>
+
+        <dd>
+            @Html.Raw(Model.Description)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <a href="~/Panel/Project/Edit/@Model.ProjectID" class="btn btn-warning"><i class="fa fa-pencil"></i> Düzenle</a>
+
+</p>
+<hr />
+<p>
+    <a href="~/Panel/Project/index" class="btn btn-default"><i class="fa fa-sign-out"></i> Listeye Dön</a>
+
+</p>

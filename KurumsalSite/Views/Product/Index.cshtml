@@ -1,0 +1,73 @@
+﻿@model IEnumerable<KurumsalEntityLayer.Entity.Product>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+
+    .kartlar {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .resmi-kart {
+        max-width: 600px;
+        margin: 20px auto;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+        .resmi-kart img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .resmi-kart .icerik {
+            padding: 20px;
+        }
+
+        .resmi-kart h2 {
+            color: #333;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .resmi-kart p {
+            color: #666;
+            font-size: 1em;
+        }
+
+
+        .resmi-kart:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+</style>
+
+<h1 class="text-center">_Ürünler</h1>
+<br />
+
+@foreach (var item in Model)
+{
+    <div class="kartlar">
+
+
+        <div class="resmi-kart">
+            <img src="@item.ImageURL" alt="Resim Açıklaması">
+            <div class="icerik">
+                <h2>@item.ProductName</h2>
+                <p>@item.MetaDescription</p>
+
+                <a href="~/Product/ProductDetail/@item.ProductID" class="btn btn-primary">Daha Fazlası</a>
+
+            </div>
+
+        </div>
+    </div>
+
+}

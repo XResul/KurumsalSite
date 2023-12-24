@@ -1,0 +1,14 @@
+  routes.MapRoute(
+               name: "DefaultLocalized",
+               url: "{lang}/{controller}/{action}/{id}",
+               defaults: new
+               {
+                   controller = "Home",
+                   action = "Index",
+                   id = UrlParameter.Optional,
+                   lang = UrlParameter.Optional,
+
+               },
+               constraints: new { lang = @"^[a-zA-Z]{2}$" },
+               namespaces: new[] { typeof(MvcAcedemy103.Controllers.HomeController).Namespace }
+               );

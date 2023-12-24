@@ -1,0 +1,52 @@
+﻿@*@model KurumsalEntityLayer.Entity.Pages
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+
+
+<style>
+
+    .card-img-top {
+        width: 60%;
+        border-radius: 50%;
+        margin: 0 auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .card {
+        display: flex;
+        float: left;
+        margin: 20px;
+        padding: 20px 1.5em 0.5em 0.5em;
+        text-align: center;
+        border-radius: 2em;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-title {
+        font-weight: bold;
+        font-size: 1.5em;
+    }
+
+    .btn-primary {
+        border-radius: 2em;
+        padding: 0.5em 1.5em;
+    }
+</style>
+
+<h1 class="text-center">_Hakkımızda_</h1>
+
+    <div class="card" style="width: 100rem;">
+        <img src="@Model.ImageURL" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">@Model.PageTitle</h5>
+            <p class="card-text">@Model.MetaDescription</p>
+            <a href="#" class="btn btn-primary">Know More</a>
+        </div>
+    </div>*@

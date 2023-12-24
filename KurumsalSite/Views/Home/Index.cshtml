@@ -1,0 +1,82 @@
+﻿@model KurumsalSite.Models.HomeViewModel
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<link href="css/style.css" rel="stylesheet">
+
+@* Logo link *@
+@* Bu linkleri tek tek indir sonra link ver *@
+@*  CTRL deyip üstünde link cıkıyor onu alıp farklı kaydet dıyıp sonra projeye indiriyoruz  *@
+<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+@* Logo link *@
+
+
+
+
+@* Swiper Başlangıc *@
+
+@Html.Partial("_swiper", Model.sliders)
+
+@* Swiper Bitiş *@
+<br />
+<br />
+
+
+
+<br />
+<br />
+<br />
+<br />
+
+@* Logo Başlangıc *@
+@Html.Partial("_Logo", Model.Logoss)
+@* Logo bitiş *@
+
+<br />
+<br />
+<br />
+<br />
+@* Ürünleri başlangıc  *@
+
+
+
+
+@Html.Partial("_ProductCard",Model.products)
+@* Ürünleri bitiş  *@
+
+<br />
+<br />
+<br />
+<br />
+<br />
+
+
+@* Project başlangıc *@
+@*@Html.Partial("_Project", Model.Projects)*@
+@* Project bitiş *@
+
+
+
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+ @*@Html.Partial("_About",Model.PageHakkimizda)*@
+

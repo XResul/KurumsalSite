@@ -1,0 +1,306 @@
+
+
+
+.lightbox {
+    max-width: 1270px;
+    margin: 0px auto;
+}
+
+.lg-outer .lg-thumb-item {
+    cursor: pointer;
+    float: left;
+    overflow: hidden;
+    height: 100%;
+    border: 1px none;
+    border: 1px transparent solid;
+    margin-bottom: 5px;
+    border-radius: 0px;
+    padding: 3px;
+}
+
+
+    .lg-outer .lg-thumb-item.active, .lg-outer .lg-thumb-item:hover {
+        border-color: white;
+    }
+
+
+    .lg-outer .lg-thumb-item img {
+        transition: all 0.5s ease-in-out;
+        overflow: hidden;
+    }
+
+    .lg-outer .lg-thumb-item.active img, .lg-outer .lg-thumb-item:hover img {
+        border-color: white;
+        transform: scale(1.6);
+    }
+
+.lg-outer .lg-img-wrap {
+    position: static;
+    padding: 0 5px;
+    background-image: url(loading.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+.container169 {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    /* padding-top: 75%; /* 4:3 Aspect Ratio */
+    /*padding-top: 66.66%; /* 3:2 Aspect Ratio */
+    transition: all .5s ease-in-out;
+}
+
+.container11 {
+    position: relative;
+    width: 100%;
+    padding-top: 100%; /* 16:9 Aspect Ratio */
+    /* padding-top: 75%; /* 4:3 Aspect Ratio */
+    /*padding-top: 66.66%; /* 3:2 Aspect Ratio */
+    transition: all .5s ease-in-out;
+}
+
+.container32 {
+    position: relative;
+    width: 100%;
+    padding-top: 66.66%; /* 3:2 Aspect Ratio */
+    transition: all .5s ease-in-out;
+}
+
+.container43 {
+    position: relative;
+    width: 100%;
+    padding-top: 75%; /* 4:3 Aspect Ratio */
+    transition: all .5s ease-in-out;
+    overflow: hidden;
+}
+
+.text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    width: 100%;
+    height: 100%;
+    background-image: url(https://i2.wp.com/www.kenlyonsphotography.com.au/wp-content/uploads/2014/10/140409-London-England-195928-1024px.jpg?ssl=1);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:contain;
+    transition: all .5s ease-in-out;
+    cursor: pointer;
+}
+
+.col-md-3 {
+  
+    position: relative;
+}
+
+.cont {
+   
+    margin: 12px;
+    overflow: hidden;
+    position: relative;
+    cursor:pointer;
+   background-color: #fcfcfc;
+    transition: all .5s ease-in-out;
+    border: 1px #f5f5f5 solid;
+    /*box-shadow:0px 0px 5px rgba(0, 0, 0, 0.14);*/
+}
+
+    .cont:hover .container11 .text, .cont:hover .container32 .text, .cont:hover .container169 .text, .cont:hover .container43 .text {
+        cursor: pointer;
+        transform: scale(1.2);
+    }
+
+    /*.cont:hover {
+        transform: translateY(0px);
+    }*/
+        .cont:hover:before {
+
+       color:#1c3e67!important;
+
+        }
+
+    .cont h2 {
+
+         font-size:14pt; margin:0px; padding:8px; background-color:rgba(252, 252, 252, 0.80); position:absolute;left:0px; bottom:0px; width:100%; color:rgb(1, 1, 1); transition:all .5s ease-in-out;
+
+    }
+
+.cont:hover h2 {
+
+    color:#1f6771;
+}
+    .cont p {
+
+         margin:5px; padding:5px;
+    }
+    .cont:before {
+        content: '';
+        position: absolute;
+        left: 0px;
+        bottom: 15px;
+        width: 100%;
+        padding: 8px;
+        background-color: transparent;
+        color: #626262;
+        font-weight: bold;
+        text-align: center;
+        z-index: 1;
+        font-size: 12pt;
+    }
+
+/*.text img {
+    display: block !important;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}*/
+
+
+    @media only screen and (max-width: 767px) {
+
+        .text img {
+            display: block !important;
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+        }
+
+        .text {
+            background-image: none !important;
+            position: relative;
+        }
+
+        .cont {
+            padding: 12px;
+            margin: 10px;
+            overflow: hidden;
+            position: relative;
+     
+            transition: all .5s ease-in-out;
+            padding-bottom: 50px;
+        }
+
+
+        .container169 {
+            position: relative;
+            width: 100%;
+            padding-top: 0px; /* 16:9 Aspect Ratio */
+            /* padding-top: 75%; /* 4:3 Aspect Ratio */
+            /*padding-top: 66.66%; /* 3:2 Aspect Ratio */
+            transition: all .5s ease-in-out;
+        }
+
+        .container11 {
+            position: relative;
+            width: 100%;
+            padding-top: 0px; /* 16:9 Aspect Ratio */
+            /* padding-top: 75%; /* 4:3 Aspect Ratio */
+            /*padding-top: 66.66%; /* 3:2 Aspect Ratio */
+            transition: all .5s ease-in-out;
+        }
+
+        .container32 {
+            position: relative;
+            width: 100%;
+            padding-top: 0px; /* 3:2 Aspect Ratio */
+            transition: all .5s ease-in-out;
+        }
+
+        .container43 {
+            position: relative;
+            width: 100%;
+            padding-top: 0px; /* 4:3 Aspect Ratio */
+            transition: all .5s ease-in-out;
+            overflow: hidden;
+        }
+    }
+
+    @media only screen and (min-width: 480px) and (max-width: 767px) {
+        .text img {
+            display: block !important;
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+        }
+
+        .text {
+            background-image: none !important;
+            position: relative;
+        }
+
+        .cont {
+            padding: 12px;
+            margin: 10px;
+            overflow: hidden;
+            position: relative;
+          
+            transition: all .5s ease-in-out;
+            padding-bottom: 50px;
+        }
+
+        .container169 {
+            position: relative;
+            width: 100%;
+            padding-top: 0px; /* 16:9 Aspect Ratio */
+            /* padding-top: 75%; /* 4:3 Aspect Ratio */
+            /*padding-top: 66.66%; /* 3:2 Aspect Ratio */
+            transition: all .5s ease-in-out;
+        }
+
+        .container11 {
+            position: relative;
+            width: 100%;
+            padding-top: 0px; /* 16:9 Aspect Ratio */
+            /* padding-top: 75%; /* 4:3 Aspect Ratio */
+            /*padding-top: 66.66%; /* 3:2 Aspect Ratio */
+            transition: all .5s ease-in-out;
+        }
+
+        .container32 {
+            position: relative;
+            width: 100%;
+            padding-top: 0px; /* 3:2 Aspect Ratio */
+            transition: all .5s ease-in-out;
+        }
+
+        .container43 {
+            position: relative;
+            width: 100%;
+            padding-top: 0px; /* 4:3 Aspect Ratio */
+            transition: all .5s ease-in-out;
+            overflow: hidden;
+        }
+    }
+
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+    }
+
+    @media only screen and (min-width: 992px) and (max-width: 1999px) {
+    }
+
+    .cont h2 {
+    font-size: 14pt;
+    margin: 0px;
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0.28);
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    color: rgb(255, 255, 255);
+    transition: all .5s ease-in-out;
+}
+
+.lightbox {
+    margin-bottom:18px;
+}

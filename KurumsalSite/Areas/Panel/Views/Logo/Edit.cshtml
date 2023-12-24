@@ -1,0 +1,52 @@
+﻿@model KurumsalEntityLayer.Entity.Logos
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Panel/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center">Düzenleme Sayfası</h2>
+
+@using (Html.BeginForm("Edit", "Logo", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.LogoID)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.LogoName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.LogoName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LogoName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ImageURL, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.HiddenFor(model=>model.ImageURL)
+                <br />
+                <br />
+                <img src="@Model.ImageURL" style="max-width:50%;max-height:50%;"/>
+
+                <br />
+                <br />
+                <input type="file" name="image" id="image"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    <a href="~/Panel/Logo/index" class="btn btn-default"><i class="fa fa-sign-out"></i> Listeye Dön</a>
+
+</div>

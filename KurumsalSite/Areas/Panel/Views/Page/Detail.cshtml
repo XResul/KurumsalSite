@@ -1,0 +1,114 @@
+﻿@model KurumsalEntityLayer.Entity.Pages
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Areas/Panel/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detaylar</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Kategori Adı
+        </dt>
+
+        <dd>
+            @ViewBag.pages
+            <hr />
+
+        </dd>
+
+        <dt>
+            Başlık
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PageTitle)
+            <hr />
+
+        </dd>
+
+        <dt>
+            Resim
+        </dt>
+
+        <dd>
+            <img src="@Model.ImageURL" style="max-width:70%;" />
+            <hr />
+
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MetaDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MetaDescription)
+            <hr />
+
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MetaKey)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MetaKey)
+            <hr />
+
+        </dd>
+
+
+
+        <dt>
+            Tarih
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PageDate)
+            <hr />
+
+        </dd>
+
+        <dt>
+            Aktiflik
+        </dt>
+
+        <dd>
+            @if (Model.IsActive == true)
+            {
+                <div class="aktif"></div>
+                <h6>Aktif</h6>
+            }
+            else
+            {
+                <div class="pasif"></div>
+                <h6>Pasif</h6>
+
+            }
+            <hr />
+
+        </dd>
+        <dt>
+            Açıklama
+        </dt>
+
+        <dd>
+            @Html.Raw(Model.Description)
+            <hr />
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <a href="~/Panel/Page/Edit/@Model.PageID" class="btn btn-warning"><i class="fa fa-pencil"></i> Düzenle</a>
+</p>
+<hr />
+
+<p>
+    <a href="~/Panel/Page/index" class="btn btn-default"><i class="fa fa-sign-out"></i> Listeye Dön</a>
+
+</p>

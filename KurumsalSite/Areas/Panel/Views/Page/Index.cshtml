@@ -1,0 +1,81 @@
+﻿@model IEnumerable<KurumsalEntityLayer.Entity.Pages>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Panel/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Sayfalar Listesi</h2>
+<br />
+<p>
+    <a href="~/Panel/Page/Create" class="btn btn-primary"><i class="fa fa-plus"></i> Yeni</a>
+
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Resim
+        </th>
+        <th>
+            Sayfa Başlıgı
+        </th>
+
+
+        <th>
+            @Html.DisplayNameFor(model => model.PageCategory.PageCategoryname)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.MetaKey)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PageDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <img src="@item.ImageURL" style="max-width:70%;" />
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.PageTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PageCategory.PageCategoryname)
+        </td>
+
+
+
+        <td>
+            @Html.DisplayFor(modelItem => item.MetaKey)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.PageDate)
+        </td>
+        <td>
+            @if (item.IsActive == true)
+            {
+                <div class="aktif"></div>
+            }
+            else
+            {
+                <div class="pasif"></div>
+            }
+        </td>
+        <td>
+            <a href="~/Panel/Page/Edit/@item.PageID" class="btn btn-warning"><i class="fa fa-pencil"></i> Düzenle</a>
+            <a href="~/Panel/Page/Detail/@item.PageID" class="btn btn-info"><i class="fa fa-info"></i> Detaylar</a>
+            <a href="~/Panel/Page/Delete/@item.PageID" class="btn btn-danger"><i class="fa fa-trash"></i> Kaldır</a>
+        </td>
+       
+    </tr>
+}
+
+</table>

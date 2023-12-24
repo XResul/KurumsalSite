@@ -1,0 +1,65 @@
+﻿@model IEnumerable<KurumsalEntityLayer.Entity.PageCategory>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Panel/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Sayfalar Kategori</h2>
+
+<p>
+    <a href="~/Panel/PageCategory/Create" class="btn btn-primary"><i class="fa fa-plus"></i> Yeni Kategori</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Resim
+        </th>
+        <th>
+            Kategori Ad
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.MetaDescription)
+        </th>
+        <th>
+            Aktiflik
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <img src="@item.ImageURL" style="max-width:70%;"/>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PageCategoryname)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.MetaDescription)
+        </td>
+   
+        <td>
+            @if (item.IsActive==true)
+            {
+                <div class="aktif"></div>
+            }
+            else
+            {
+                <div class="pasif"></div>
+            }
+
+        </td>
+        <td>
+            <a href="~/Panel/PageCategory/Edit/@item.PageCategoryID" class="btn btn-warning"><i class="fa fa-pencil"></i> Düzenle</a>
+
+            <a href="~/Panel/PageCategory/Detail/@item.PageCategoryID" class="btn btn-info"><i class="fa fa-info"></i> Detaylar</a>
+
+            <a href="~/Panel/PageCategory/Delete/@item.PageCategoryID" class="btn btn-danger"><i class="fa fa-trash"></i> Kaldır</a>
+        </td>
+    </tr>
+}
+
+</table>

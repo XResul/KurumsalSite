@@ -1,0 +1,63 @@
+﻿@model  KurumsalSite.Models.Project_T_HomeView
+@{
+    ViewBag.Title = "ProjectImageDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+
+    main {
+        max-width: 800px;
+        margin: 20px auto;
+    }
+
+    .urun-galerisi {
+        border: 2px solid #1afff8;
+        float: left;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .urun {
+        width:450px;
+        margin: 15px;
+        text-align: center;
+    }
+
+        .urun img {
+            width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+            .urun img:hover {
+                transform: scale(1.1);
+            }
+</style>
+
+<body>
+    <header class="benner">
+        <h1>@Model.ProjectSecilen.ProjectName</h1>
+    </header>
+
+    @foreach (var item in Model.ProjectImagess)
+    {
+        <div class="urun-galerisi">
+            <div class="urun">
+                <img src="@item.ProjectImageUrl" alt="Ürün 1">
+                @*<p>Ürün Açıklaması 1</p>*@
+            </div>
+        </div>
+    }
+
+
+</body>

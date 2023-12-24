@@ -1,0 +1,62 @@
+﻿@model IEnumerable<KurumsalEntityLayer.Entity.ProductCategory>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Panel/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Ürünler Kategori Sayfası </h2>
+
+<p>
+    <a href="~/Panel/ProductCategory/Create" class="btn btn-primary"><i class="fa fa-plus"></i> Yeni Kategori</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Resim
+        </th>
+        <th>
+            Kategori Adı
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.MetaDescription)
+        </th>
+        <th>
+            Aktiflik Durumu
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <img src="@item.ImageURL" style="max-width:70%;"/>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductCategoryName)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.MetaDescription)
+        </td>
+        <td>
+            @if (item.IsActive==true)
+            {
+                <div class="aktif"></div>
+            }
+            else
+            {
+                <div class="pasif"></div>
+            }
+        </td>
+        <td>
+            <a href="~/Panel/ProductCategory/Edit/@item.ProductCategoryID" class="btn btn-warning"><i class="fa fa-pencil"></i> Düzenle</a>
+            <a href="~/Panel/ProductCategory/Detail/@item.ProductCategoryID" class="btn btn-info"><i class="fa fa-info"></i> Detaylar</a>
+         
+            <a href="~/Panel/ProductCategory/Delete/@item.ProductCategoryID" class="btn btn-danger"><i class="fa fa-trash"></i> Kaldır</a>
+        </td>
+    </tr>
+}
+
+</table>

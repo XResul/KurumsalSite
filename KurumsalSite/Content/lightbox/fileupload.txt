@@ -1,0 +1,82 @@
+
+    $(function () {
+        var divelement = document.getElementById("div-panel");
+       
+        $("#file").on("change", function () {
+
+            var data = new FormData();
+
+            var files = $("#file").get(0).files;
+
+
+            var prgs = 0;
+            // Add the uploaded image content to the form data collection
+            for (var i = 0; i < files.length; i++) {
+                data.append("UploadedImage_" + i.toString(), files[i]);
+
+                var ajaxRequest = $.ajax({
+
+                    xhr: function () {
+                        var xhr = new window.XMLHttpRequest();
+
+                        // Upload progress
+                        xhr.upload.addEventListener("progress", function (evt) {
+
+
+                            var percent = Math.round(100 * event.loaded / event.total)
+
+                            //var percentComplete = Math.round(evt.loaded / evt.total) * 100;
+                            //Do something with upload progress
+                            divelement.innerHTML = "<div style='text-align:center'><span style='font-weight:bold'>" + percent + "%</span><div style='position:relative;height:10px;width:100%;background-color:#e3e3e3'> <div style='position:absolute;left:0px;top:0px;background-color:#158dd3; height:10px;width:" + percent + "%; text-align:center'></div></div></div>"
+
+
+
+                        }, false);
+
+                        //// Download progress
+                        //xhr.addEventListener("progress", function (evt) {
+                        //    if (evt.lengthComputable) {
+                        //        var percentComplete = Math.round(evt.loaded / evt.total) * 100;
+
+
+                        //    }
+                        //}, false);
+
+
+                        return xhr;
+                    },
+                    beforeSend: function () {
+                        // setting a timeout
+                        divelement.innerHTML = "<div style='text-align:center'><span style='font-weight:bold'>" + 0 + "%</span><div style='position:relative;height:10px;width:100%;background-color:#e3e3e3'> <div style='position:absolute;left:0px;top:0px;background-color:#158dd3; height:10px;width:" + 0 + "%; text-align:center'></div></div></div>"
+
+                    },
+                     type: "POST",
+                    url: "/api/upload/Post",
+                    contentType: false,
+                    processData: false,
+                    data: data,
+                    success: function (response) {
+
+                        var rs = response;
+
+                        $(".simage").attr("src", rs);
+                      
+
+
+                    }
+                });
+
+
+                /*data.delete("UploadedImage_" + i.toString());*/
+
+
+
+            }
+
+
+        });
+
+        
+
+
+    });

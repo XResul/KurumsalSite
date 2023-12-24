@@ -1,0 +1,98 @@
+﻿@model IEnumerable<KurumsalEntityLayer.Entity.Users>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Panel/Views/Shared/_Layout.cshtml";
+}
+
+<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+
+<h2 class="text-center">Kullanıcı Listesi</h2>
+
+<p>
+    <a href="~/Panel/Users/Create" class="btn btn-primary"><i class="fa fa-plus"></i> Yeni</a>
+</p>
+
+@foreach (var item in Model)
+{
+
+    <div class="main">
+        <div class="contact-box">
+            <h4 class="user-name">@item.UserName</h4>
+            <ul class="user-contact">
+                <li>
+                    <i class="fa fa-envelope-o"></i>@item.Email
+                </li>
+                <li>
+                    <i class="fa fa-globe"></i>@item.UserPassword
+                </li>
+            </ul>
+        </div>
+    </div>
+    <br />
+    <p class="text-center">
+        <a href="~/Panel/Users/Edit/@item.UserID" class="btn btn-warning"><i class="fa fa-pencil-square"></i> Düzenle</a>
+
+        <a href="~/Panel/Users/Detail/@item.UserID" class="btn btn-info"><i class="fa fa-info-circle"></i> Detaylar</a>
+
+        <a href="~/Panel/Users/Delete/@item.UserID" class="btn btn-danger"><i class="fa fa-trash-o"></i> Kaldır</a>
+    </p>
+    <br />
+    <br />
+    <br />
+}
+<style>
+    body {
+        font-family: sans-serif;
+        color: #3f3f3f;
+    }
+
+    .main {
+        border: 2px solid gray;
+        width: 250px;
+        margin: auto;
+        box-shadow: 2px 2px 5px 1px gray;
+    }
+
+    .user-pic {
+        border-bottom: 2px solid gray;
+    }
+
+    .user-name {
+        margin-left: 15px;
+        margin-bottom: 0;
+        color: #B77425;
+    }
+
+    .user-contact {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .fa-envelope-o {
+        margin-right: 10px;
+        margin-left: 15px;
+        margin-bottom: 5px;
+    }
+
+    .fa-globe {
+        margin-right: 10px;
+        margin-left: 15px;
+        margin-bottom: 5px;
+    }
+
+
+    .main {
+        width: 100%;
+        height: 150px;
+    }
+
+    .user-pic {
+        border-right: 2px solid gray;
+        float: left;
+    }
+
+    .contact-box {
+        float: left;
+    }
+</style>

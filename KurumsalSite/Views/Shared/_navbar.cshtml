@@ -1,0 +1,239 @@
+﻿@model KurumsalSite.Models.NavbarViewModel
+
+@* Linkler  *@
+
+<link href="~/Content/mega-menu/css/mega-menu.css" rel="stylesheet" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+@* Linkler  *@
+<style>
+    /*Top Bar css*/
+    .bg-primary a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .top-bar span {
+        font-size: 18px;
+        padding: 6px;
+    }
+
+    .bg {
+        background-color: #898989 !important;
+        color: white;
+    }
+
+    /*Top Bar css*/
+
+
+
+
+
+    .social-icons-top a {
+        color: white;
+    }
+
+    .social-icons-top a:hover {
+        color: #ccc6c6;
+    }
+</style>
+
+
+
+<body>
+    <section class="bg">
+        <div class="container">
+            <div class="row top-bar" style="padding-bottom:3px;">
+                <div class="col">
+                    <div class="social-icons-top">
+                        <span class="text-white">
+                            <a href="@Model.SocialTake1.Facebook" target="_blank">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </span>
+
+                        <span class="text-white">
+                            <a href="@Model.SocialTake1.Instagram" target="_blank">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </span>
+
+                        <span class="text-white">
+                            <a href="@Model.SocialTake1.Twitter" target="_blank">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </span>
+
+                        <span class="text-white">
+                            <a href="@Model.SocialTake1.Youtube" target="_blank">
+                                <i class="fa fa-youtube"></i>
+                            </a>
+                        </span>
+
+                        <span class="text-white">
+                            <a href="@Model.SocialTake1.Linkedin" target="_blank">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="col text-right">
+                    <span class="text-white">
+                        <i class="fa fa-phone"></i> @Model.ContactTake1.Phone
+                    </span>
+
+                    <span class="text-white">
+                        |
+                    </span>
+
+                    <span class="text-white">
+                        <i class="fa fa-envelope"></i> @Model.ContactTake1.Email
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </section>
+
+    <br />
+    <header class="header_area">
+        <div class="main_header_area animated">
+            <div class="container">
+                <nav id="navigation1" class="navigation">
+                    <div class="nav-header">
+
+                        <a class="nav-brand" href="~/Home/index">
+                            <img src="~/Content/gülerÇelikLogo.png" style="max-width:40%;" />
+                        </a>
+                        <div class="nav-toggle">
+                            <div class="navbar-toggle">
+                                <span class="icon-bar top-bar"></span>
+                                <span class="icon-bar middle-bar"></span>
+                                <span class="icon-bar bottom-bar"></span>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="nav-search">
+                        <div class="nav-search-button"><i class="nav-search-icon"></i></div>
+                        <form>
+                            <div class="nav-search-inner">
+                                <input type="search" name="search" placeholder="Search..." />
+                            </div>
+                        </form>
+                    </div>
+                    <div class="nav-menus-wrapper">
+                        <ul class="nav-menu align-to-right">
+                            @* ------------------------- *@
+
+                            @*<li><a href="#" target="_blank">Ana Sayfa</a></li>*@
+                            <li><a href="~/Home/index">Ana Sayfa</a></li>
+                            @* ------------------------- *@
+
+                            <li>
+                                <a href="#">Kurumsal</a>
+                                <ul class="nav-dropdown">
+                                    @foreach (var item in Model.pages.Where(p => p.PageCategoryID == 1 && p.IsActive == true).ToList())
+                                    {
+
+                                        <li>
+                                            <a href="~/Page/PageDetail/@item.PageID">
+                                                @item.PageTitle
+                                            </a>
+                                        </li>
+
+                                    }
+
+
+                                </ul>
+
+
+                            </li>
+
+
+                            @* ------------------------- *@
+
+
+                            <li>
+                                <a href="#">Ürünler</a>
+                                <ul class="nav-dropdown">
+                                    @foreach (var item in Model.Products.ToList())
+                                    {
+
+                                        <li>
+                                            <a href="~/Product/ProductDetail/@item.ProductID">
+                                                @item.ProductName
+                                            </a>
+                                        </li>
+
+                                    }
+
+
+                                </ul>
+
+
+                            </li>
+
+                            @* ------------------------- *@
+                            <li>
+                                <a href="#">Projeler</a>
+                                <ul class="nav-dropdown">
+                                    @foreach (var item in Model.ProjectCategorys.Where(p => p.IsActive == true).ToList())
+                                    {
+
+                                        <li>
+                                            @if (item.ProjectCategoryID == 1)
+                                            {
+                                                <a href="~/ProjectT/GuncelP/@item.ProjectCategoryID">
+                                                    @item.ProjectCategoryName
+                                                </a>
+                                            }
+                                            else if (item.ProjectCategoryID == 2)
+                                            {
+                                                <a href="~/ProjectT/YapilanP/@item.ProjectCategoryID">
+                                                    @item.ProjectCategoryName
+                                                </a>
+                                            }
+                                            else
+                                            {
+                                                <a href="~/ProjectT/index">
+                                                    @item.ProjectCategoryName
+                                                </a>
+                                            }
+                                        </li>
+
+                                    }
+
+
+                                </ul>
+
+
+                            </li>
+
+                            @* ------------------------- *@
+
+                            @*<li><a href="#" target="_blank">İletişim</a></li>*@
+                            <li><a href="~/Home/Contact">İletişim</a></li>
+
+                            @* ------------------------- *@
+                            @* target="_blank"   demek link'e tıklladıgımız zaman başka sayfada acıyor linki *@
+
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- partial -->
+
+</body>
+
+

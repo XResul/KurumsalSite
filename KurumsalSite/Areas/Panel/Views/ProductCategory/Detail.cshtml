@@ -1,0 +1,84 @@
+﻿@model KurumsalEntityLayer.Entity.ProductCategory
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Areas/Panel/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detaylar Sayfası</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            Resim
+        </dt>
+
+        <dd>
+            <img src="@Model.ImageURL" style="max-width:70%;" />
+            <hr />
+        </dd>
+
+        <dt>
+            Kategori Ad
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductCategoryName)
+            <hr />
+        </dd>
+
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MetaDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MetaDescription)
+            <hr />
+
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MetaKey)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MetaKey)
+            <hr />
+
+        </dd>
+
+        <dt>
+            Aktiflik
+        </dt>
+
+        <dd>
+            @if (Model.IsActive == true)
+            {
+                <div class="aktif"></div>
+                <h2>Aktif</h2>
+            }
+            else
+            {
+                <div class="pasif"></div>
+                <h2>Pasif</h2>
+            }
+
+            <hr />
+
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <a href="~/Panel/ProductCategory/Edit/@Model.ProductCategoryID" class="btn btn-warning"><i class="fa fa-pencil"></i> Düzenle</a>
+
+</p>
+<hr />
+<p>
+    <a href="~/Panel/ProductCategory/index" class="btn btn-default"><i class="fa fa-sign-out"></i> Listeye Dön</a>
+
+</p>
